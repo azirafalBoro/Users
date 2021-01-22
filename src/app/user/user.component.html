@@ -1,0 +1,43 @@
+<!--podstawowe informacje:-->
+<!-- - Imię i nazwisko-->
+<!-- - email-->
+<!-- - strona www-->
+<!-- - nazwa firmy-->
+<!-- - liczba wpisów użytkownika-->
+<!-- - pola jednokrotnego wyboru (ang. radio buttons) z dwoma wartościami –-->
+<!--pozwalające wybierać czy lista wpisów powinna być wyświetlana czy nie-->
+
+<!-- - lista wpisów użytkownika:-->
+<!-- - lista tytułów wpisów danego użytkownika-->
+<h2>Here is details about user:</h2>
+<div *ngIf="user$ | async as person">
+  <ul>
+    <li>
+      <span>Name Surname: {{person.name}}</span>
+    </li>
+    <li>
+      <span>Email: {{person.email}}</span>
+    </li>
+    <li>
+      <span>Website: {{person.website}}</span>
+    </li>
+    <li>
+      <span>Company Name: {{person.company.name}}</span>
+    </li>
+    <li>
+      <span>Number of entry:</span>
+    </li>
+    <li>
+      <p>Select to show all entries:</p>
+      <div>
+        <input type="radio" id="show" name="drone" value="show"
+               checked>
+        <label for="show">Show</label>
+      </div>
+      <div>
+        <input type="radio" id="hide" name="drone" value="hide">
+        <label for="hide">Hide</label>
+      </div>
+    </li>
+  </ul>
+</div>
