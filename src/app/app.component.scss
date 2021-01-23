@@ -1,0 +1,21 @@
+html, body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main-view {
+  background-color: rgba(251,232,213,0.98);
+  position:fixed;
+  height: 100%;
+  width: 100%;
+
+  .header {
+    min-height: 20%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #444c7e;
+  }
+}

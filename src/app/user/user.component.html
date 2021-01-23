@@ -1,40 +1,43 @@
-<h2>Here is details about user:</h2>
-<button (click)="goToMain()">Back to list</button>
-<div *ngIf="{ details: user$ | async,
-              posts: userPosts$ | async } as person">
-  <ul>
-    <li>
-      <span>Name Surname: {{person.details?.name}}</span>
-    </li>
-    <li>
-      <span>Email: {{person.details?.email}}</span>
-    </li>
-    <li>
-      <span>Website: {{person.details?.website}}</span>
-    </li>
-    <li>
-      <span>Company Name: {{person.details?.company.name}}</span>
-    </li>
-    <li>
-      <span>Number of entry: {{person.posts?.length}}</span>
-      <div class="show-entries">
-        <input type="radio" id="show" [(ngModel)]="radioData" name="drone" value="show"
-               checked>
-        <label for="show">Show all entries</label>
-        <input type="radio" id="hide" [(ngModel)]="radioData" name="drone" value="hide">
-        <label for="hide">Hide all entries</label>
-      </div>
-      <ng-container *ngIf="isShowButtonSelected()">
-        <div *ngFor="let post of person.posts">
+<div class="single-user">
+  <h2>Here is details about user:</h2>
+  <button (click)="goToMain()">Back to list</button>
+  <div class="container-with-text" *ngIf="{ details: user$ | async,
+                posts: userPosts$ | async } as person">
+    <ul>
+      <li>
+        <span>Name Surname: {{person.details?.name}}</span>
+      </li>
+      <li>
+        <span>Email: {{person.details?.email}}</span>
+      </li>
+      <li>
+        <span>Website: {{person.details?.website}}</span>
+      </li>
+      <li>
+        <span>Company Name: {{person.details?.company.name}}</span>
+      </li>
+      <li>
+        <span>Number of entry: {{person.posts?.length}}</span>
+      </li>
+    </ul>
+    <div class="show-entries">
+      <input type="radio" id="show" [(ngModel)]="radioData" name="drone" value="show"
+             checked>
+      <label for="show">Show all entries</label>
+      <input type="radio" id="hide" [(ngModel)]="radioData" name="drone" value="hide">
+      <label for="hide">Hide all entries</label>
+    </div>
+    <br>
+    <div class="higher" *ngIf="isShowButtonSelected()">
+        <ng-container *ngFor="let post of person.posts">
           <ul>
-            <li>
-              <span>Title: {{post?.title}}</span>
+            <li class="entry">
+              <span class="entry-title">Title: {{post?.title}}</span>
               <br>
               <span>{{post?.body}}</span>
             </li>
           </ul>
-        </div>
-      </ng-container>
-    </li>
-  </ul>
+        </ng-container>
+      </div>
+  </div>
 </div>

@@ -1,19 +1,20 @@
-<h2>Here is list of users:</h2>
-<div *ngFor="let user of (users$ | async); trackBy: trackByMethod">
-  <ul>
-    <li>
-    <span>User Name: {{user.name}}</span>
-    </li>
-    <li>
-      <span>Email: {{user.email}}</span>
-    </li>
-    <li>
-      <span>Website: {{user.website}}</span>
-    </li>
-    <li>
-      <button (click)="goForDetails(user.id)">Details</button>
-    </li>
-  </ul>
+<div class="list-component">
+  <h2>Here is list of users:</h2>
+  <div class="list-of-user">
+      <ng-container *ngFor="let user of (users$ | async); trackBy: trackByMethod">
+        <ul>
+          <li>
+          <span>User Name: {{user.name}}</span>
+          </li>
+          <li>
+            <span>Email: {{user.email}}</span>
+          </li>
+          <li>
+            <span>Website: {{user.website}}</span>
+          </li>
+          <button (click)="goForDetails(user.id)">Details</button>
+        </ul>
+        <br>
+      </ng-container>
+  </div>
 </div>
-
-

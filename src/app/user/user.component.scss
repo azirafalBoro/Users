@@ -1,0 +1,23 @@
+.single-user {
+  padding: 5px;
+  height: 100%;
+
+  .container-with-text {
+    height: 100%;
+    .higher {
+      height: 50%;
+      overflow: auto;
+
+      .entry {
+        display: inline-block;
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 10px;
+        margin:10px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
