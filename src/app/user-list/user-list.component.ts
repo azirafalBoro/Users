@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServerJsonService } from '../server-json.service';
+import { ServerJsonService } from '../services/server-json.service';
 import { Observable } from 'rxjs/index';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
@@ -17,13 +17,14 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
     this.users$ = this.usersService.getUsers();
-
-    this.users$.subscribe(tmp => console.log(tmp));
   }
 
   goForDetails(id: any) {
-    console.log('id', id);
-    this.router.navigate(['/' + id]);
+    this.router.navigate(['details/' + id]);
+  }
+
+  trackByMethod(index: number, el: User): number {
+    return el.id;
   }
 
 }

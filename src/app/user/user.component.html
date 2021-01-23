@@ -1,4 +1,5 @@
 <h2>Here is details about user:</h2>
+<button (click)="goToMain()">Back to list</button>
 <div *ngIf="{ details: user$ | async,
               posts: userPosts$ | async } as person">
   <ul>
